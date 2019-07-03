@@ -6,7 +6,9 @@
 
     <groupId>com.learncamel</groupId>
     <artifactId>learncamel-simple-file</artifactId>
+     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
+     <name>CamelTest-Application</name>
 
     <dependencies>
 
