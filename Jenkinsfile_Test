@@ -2,7 +2,7 @@
 
 /**
 @Author 
-SridharKumar
+Galam Sivakrishna
 **/
 
 node {
@@ -13,11 +13,11 @@ node {
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = 'C:/Users/raju_/Downloads/apache-maven-3.6.1'
+      mvnHome = 'D:/GALAM/SivaDevopsSoftwares/apache-maven-3.6.0-bin/apache-maven-3.6.0'
    }
    stage('Maven Build') {
       // Run the maven build
-      withEnv(["MVN_HOME=C:/Users/raju_/Downloads/apache-maven-3.6.1"]) {
+      withEnv(["MVN_HOME=D:/GALAM/SivaDevopsSoftwares/apache-maven-3.6.0-bin/apache-maven-3.6.0"]) {
          if (isUnix()) {
             sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
          } else {
