@@ -16,6 +16,11 @@ node{
         //sh "${mvnHome}/bin/mvn package"
 }
     
+    stage('TestResults') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+      archiveArtifacts 'target/*.jar'
+   }
+    
     stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner 4.0';
     withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
