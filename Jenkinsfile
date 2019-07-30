@@ -5,6 +5,7 @@ SridharKumar
 **/
 
 node{
+    def scannerHome
     stage('SCM Checkout'){
         git 'https://github.com/galamsiva2020/learncamel-simple-file.git'
 }
@@ -22,9 +23,10 @@ node{
    //}
     
     stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarScanner 2.8';
-    withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
-    }
+        scannerHome ='D:/GALAM/sonarqube-6.2/sonarqube-6.2/bin/windows-x86-64'
+    //def scannerHome = tool 'SonarScanner 2.8';
+    //withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
+      //sh "${scannerHome}/bin/sonar-scanner"
+   // }
   }
 }
